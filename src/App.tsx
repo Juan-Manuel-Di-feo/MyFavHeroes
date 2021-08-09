@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import useHeroService from './components/service-loader/service-loader';
 
-function App() {
+
+
+const App = () => {
+  const service = useHeroService();
+  
+
+if (service.status === 'loaded') {
+  console.log(service.payload)
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {service.status === 'loaded' &&
+        service.payload.map(hero => (
+          <div key={hero.id}>{hero.name}</div>
+        ))}
     </div>
   );
 }
