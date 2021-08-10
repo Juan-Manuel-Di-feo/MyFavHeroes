@@ -2,10 +2,10 @@
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   flex-direction: row;
-  align-items: flex-start;
+  align-items:unset;
   padding: 16px;
   
-  position: relative;
+  position: static;
   width: auto;
   height:auto;
   
@@ -15,6 +15,7 @@
   }
   .header{
     align-items: center;
+    position:static;
   }
   .logo{
     align-self: center;

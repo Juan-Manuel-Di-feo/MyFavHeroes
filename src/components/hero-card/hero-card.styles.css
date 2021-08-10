@@ -1,6 +1,6 @@
 .hero-card {
-    position: relative;
-    width: 285px;
+    position: static;
+    width: 90%;
     height: 174px;
     left: 16px;
     top: 16px;
@@ -11,11 +11,13 @@
   }
   .hero-card .like-button {
 
-position: absolute;
-left: 28.07%;
-right: 55.09%;
-top: 64.37%;
-bottom: 8.05%;
+position:absolute;
+width: 40px;
+height: 40px;
+left: 31.57%;
+right: 50.00%;
+top: 75.37%;
+bottom: 8.00%;
 
 background: #6A4DBC;
 border-radius: 32px;
@@ -25,14 +27,14 @@ border-radius: 32px;
     flex-direction: row;
     align-items: flex-start;
     padding: 16px;
-    position: absolute;
+    position: static;
     left: 0%;
     right: 0%;
     top: 0%;
     bottom: 0%;
     background: rgba(54, 44, 106, 0.65);
     backdrop-filter: blur(27px);
-    border-radius: 16px;
+    border-radius: 8px;
   }
   .hero-card .content .frame-1 {
     /* Frame 1 */
@@ -44,14 +46,14 @@ border-radius: 32px;
     position: static;
     width: 132px;
     height: 142px;
-    left: 137px;
+    left: 110px;
     top: 16px;
     /* Inside Auto Layout */
     flex: none;
     order: 1;
     align-self: stretch;
     flex-grow: 1;
-    margin: 0px 16px;
+    margin: 0px 0px;
   }
   .hero-card .content .frame-1 .frame-10 {
     /* Frame 10 */
@@ -70,7 +72,7 @@ border-radius: 32px;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    margin: 16px 0px;
+    margin: 0px 0px;
   }
   .hero-card .content .frame-1 .frame-10 .frame-12 {
     /* Frame 12 */
@@ -165,7 +167,7 @@ border-radius: 32px;
     margin: 0px 16px;
   }
   .hero-card .content .group-296 .image {
-    position: absolute;
+    position:absolute;
     width: 105px;
     height: 140px;
     left: 16px;

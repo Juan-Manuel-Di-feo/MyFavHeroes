@@ -1,4 +1,7 @@
 export interface heroSpec {
+    onLiked: Function,
+    liked:boolean;
+
     id: number;
     name: string;
     slug: string;
@@ -44,3 +47,8 @@ export interface heroSpec {
   };
 
 
+export interface IHeroManager extends React.HTMLAttributes<HTMLElement>{
+      isLikeList: boolean
+      likeFunction: Function
+      displayList: heroSpec[]
+}

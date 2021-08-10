@@ -1,4 +1,4 @@
-interface ServiceInit {
+export interface ServiceInit {
     status: 'init';
 }
 interface ServiceLoading {

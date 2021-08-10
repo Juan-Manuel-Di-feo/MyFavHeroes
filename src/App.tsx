@@ -1,28 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-
+import { heroSpec } from './interfaces/interfaces';
 import useHeroService from './components/service-loader/service-loader';
-import MyLoader from './components/content-loader/content-loader.component';
-
-import HeroCard from './components/hero-card/hero-card.component';
-import { ReactComponent as Logo } from './assets/logo/logo.svg'
+import { Service, ServiceInit } from "./services/services";
+import HeroList from './components/hero-list/hero-list.component';
+import Loading from './components/content-loader/content-loader.component';
+import LikedList from './components/liked-list/liked-list.component';
 
 const App = () => {
+  const [heroState, setHeroState] = useState<heroSpec[]>([]);
   const service = useHeroService();
+
+  useEffect(()=>{
+    if (service.status === 'loaded'){
+      setHeroState(service.payload)
+    }
+  },[service.status])
+
+  const changeLikedStatus= (cardId: Number) => {
+    if(service.status === 'loaded'){
+    const heroCard = heroState.find(card => card.id === cardId)||{liked:Boolean};
+    heroCard.liked = !heroCard.liked
+    setHeroState([...heroState]);
+  } 
+    
+  }
 
   return (
     <div className="App">
       <div className='header'>
-        <div className="logo"/>
+        <div className="logo" />
       </div>
-      <div className="hero-list">
-        {service.status === 'loading' ?
-          <MyLoader /> : ''}
+        
+
+      <div className='list-wrapper'>
+        {service.status === 'loading' &&
+          <Loading />}
 
         {service.status === 'loaded' &&
-          service.payload.map(hero => (
-            <HeroCard key={hero.id} {...hero} />
-          ))}
+        <>
+          <LikedList isLikeList={true} likeFunction={changeLikedStatus} displayList={heroState.filter(card => card.liked)}  className='liked-hero-list' /> 
+          <HeroList isLikeList={false} likeFunction={changeLikedStatus} displayList={heroState.filter(card => !card.liked)}  className='hero-list' />
+        </>}
       </div>
 
     </div>

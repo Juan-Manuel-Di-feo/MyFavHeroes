@@ -1,20 +1,32 @@
-import React from "react"
+import React, { useState } from "react"
 import { heroSpec } from "../../interfaces/interfaces"
 import './hero-card.styles.css'
+import Loading from "../content-loader/content-loader.component"
 
 const HeroCard = (hero: heroSpec) => {
+    const [doneLoading, setDoneLoading] = useState<boolean>(false)
+
+    const imgLoad = (success: boolean) => {
+        if (success) {
+            setDoneLoading(true)
+            
+        }
+        return
+    }
 
     const powerCalculator = (hero: heroSpec) => {
         const stats = hero.powerstats;
+        const power = (stats.speed + stats.durability + stats.intelligence + ((stats.strength + stats.power) * (stats.combat / 100))) / 50
         return (
-            stats.speed * stats.durability + (stats.strength + stats.intelligence + stats.power) * stats.combat
+            Math.round(power * 100) / 100.
         )
     }
-
+    console.log(hero.onLiked)
     return (
         <div className='hero-card'>
-            <button className='like-button'></button>
+
             <div className='content'>
+
                 <div className='frame-1'>
                     <div className="frame-10">
                         <h1 className='hero-name'>{hero.name}</h1>
@@ -25,8 +37,20 @@ const HeroCard = (hero: heroSpec) => {
                     </div>
                 </div>
                 <div className='group-296'>
-                    <img className='image' alt="hero" src={hero.images.sm} />
+                    {doneLoading ?
+                        (<div className="loader-wrapper">
+                            <Loading />
+                            <script>{async () => {
+                                const success: boolean = Boolean(await fetch(hero.images.sm));
+                                imgLoad(success)
+                            }}
+                            </script>
+                        </div>)
+                        :
+                        (<img className='image' alt="hero" src={hero.images.sm} />)}
+
                 </div>
+                <button onClick={() => hero.onLiked(hero.id)} className='like-button'></button>
             </div>
         </div>
     )
