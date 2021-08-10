@@ -1,0 +1,174 @@
+.hero-card {
+    position: relative;
+    width: 285px;
+    height: 174px;
+    left: 16px;
+    top: 16px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .hero-card .like-button {
+
+position: absolute;
+left: 28.07%;
+right: 55.09%;
+top: 64.37%;
+bottom: 8.05%;
+
+background: #6A4DBC;
+border-radius: 32px;
+  }
+  .hero-card .content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: rgba(54, 44, 106, 0.65);
+    backdrop-filter: blur(27px);
+    border-radius: 16px;
+  }
+  .hero-card .content .frame-1 {
+    /* Frame 1 */
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: static;
+    width: 132px;
+    height: 142px;
+    left: 137px;
+    top: 16px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 0px 16px;
+  }
+  .hero-card .content .frame-1 .frame-10 {
+    /* Frame 10 */
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: static;
+    width: 132px;
+    height: 91px;
+    left: 0px;
+    top: 0px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .hero-card .content .frame-1 .frame-10 .frame-12 {
+    /* Frame 12 */
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    position: static;
+    width: 132px;
+    height: 18px;
+    left: 0px;
+    top: 73px;
+    /* Inside Auto Layout */
+    flex: none;
+  }
+  .hero-card .content .frame-1 .frame-10 .frame-12 .power-score {
+    /* power-avg */
+    position: static;
+    width: 110px;
+    left: calc(50% - 110px/2 + 11px);
+    top: 0%;
+    bottom: 0%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.273085px;
+    color: #FFFFFF;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+    margin: 0px 4px;
+  }
+  .hero-card .content .frame-1 .frame-10 .real-full-name {
+    /* superhero realname */
+    position: static;
+    left: 0%;
+    right: 0%;
+    top: 36.26%;
+    bottom: 24.18%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.273085px;
+    color: rgba(255, 255, 255, 0.49);
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 4px 0px;
+  }
+  .hero-card .content .frame-1 .frame-10 .hero-name {
+    /* superhero name */
+    position: static;
+    width: 132px;
+    left: calc(50% - 132px/2);
+    top: 0%;
+    bottom: 68.13%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 143%;
+    /* identical to box height, or 29px */
+    letter-spacing: 0.300393px;
+    color: #FFFFFF;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 4px 0px;
+  }
+  .hero-card .content .group-296 {
+    /* Group 296 */
+    position: static;
+    width: 105px;
+    height: 140px;
+    left: 16px;
+    top: 16px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 16px;
+  }
+  .hero-card .content .group-296 .image {
+    position: absolute;
+    width: 105px;
+    height: 140px;
+    left: 16px;
+    top: 16px;
+    border-radius: 12px;
+  }

@@ -1,0 +1,28 @@
+.hero-list {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  
+  position: relative;
+  width: auto;
+  height:auto;
+  
+  border: 1px dashed #7B61FF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  }
+  .header{
+    align-items: center;
+  }
+  .logo{
+    align-self: center;
+    position:sticky;
+  width: 65px;
+height: 73px;
+left: 688px;
+top: 57px;
+
+background: url(./assets/logo/logo.svg);
+  }
