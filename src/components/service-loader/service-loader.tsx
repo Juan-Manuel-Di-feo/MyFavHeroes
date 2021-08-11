@@ -11,7 +11,7 @@ const useHeroService = () => {
     useEffect((): void => {
       fetch('https://akabab.github.io/superhero-api/api/all.json')
         .then(response => response.json())
-        .then(response => setResult({ status: 'loaded', payload: response.slice(0, 12) }))
+        .then(response => setResult({ status: 'loaded', payload: response }))
         .catch(error => setResult({ status: 'error', error }));
   
     }, []);

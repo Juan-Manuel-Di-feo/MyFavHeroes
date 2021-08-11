@@ -1,13 +1,11 @@
 .hero-card {
     position: static;
-    width: 90%;
+    width: 285px;
     height: 174px;
     left: 16px;
     top: 16px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 16px 0px;
+    display: inline-block;
+    margin: 16px 16px;
   }
   .hero-card .like-button {
 

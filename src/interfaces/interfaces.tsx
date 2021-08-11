@@ -60,3 +60,9 @@ export interface IHideManager {
   hide: Boolean;
   setHide: Function;
 }
+
+export interface IGridList extends React.HTMLAttributes<HTMLElement>{ 
+  heroState: heroSpec[];
+  likeFunction: Function;
+  displayList: heroSpec[]
+}

@@ -1,8 +1,9 @@
+// @ts-nocheck
 import { heroSpec, IHeroManager } from "../../interfaces/interfaces";
 import HeroCard from "../hero-card/hero-card.component";
 import { IHideManager } from "../../interfaces/interfaces";
 
-const HeroList = (props: IHeroManager, secondProps: IHideManager) => {
+const HeroList = (props: IHeroManager) => {
     
     return (
         <div className={props.isLikeList ? 'like-list' : 'hero-list'}>

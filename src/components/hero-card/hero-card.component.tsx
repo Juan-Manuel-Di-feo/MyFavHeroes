@@ -4,15 +4,6 @@ import './hero-card.styles.css'
 import Loading from "../content-loader/content-loader.component"
 
 const HeroCard = (hero: heroSpec) => {
-    const [doneLoading, setDoneLoading] = useState<boolean>(false)
-
-    const imgLoad = (success: boolean) => {
-        if (success) {
-            setDoneLoading(true)
-            
-        }
-        return
-    }
 
     const powerCalculator = (hero: heroSpec) => {
         const stats = hero.powerstats;
@@ -21,7 +12,7 @@ const HeroCard = (hero: heroSpec) => {
             Math.round(power * 100) / 100.
         )
     }
-    console.log(hero.onLiked)
+    console.log('error',hero.biography.fullName)
     return (
         <div className='hero-card'>
 
@@ -37,18 +28,7 @@ const HeroCard = (hero: heroSpec) => {
                     </div>
                 </div>
                 <div className='group-296'>
-                    {doneLoading ?
-                        (<div className="loader-wrapper">
-                            <Loading />
-                            <script>{async () => {
-                                const success: boolean = Boolean(await fetch(hero.images.sm));
-                                imgLoad(success)
-                            }}
-                            </script>
-                        </div>)
-                        :
-                        (<img className='image' alt="hero" src={hero.images.sm} />)}
-
+                    <img className='image' alt="hero" src={hero.images.sm} />
                 </div>
                 <button onClick={() => hero.onLiked(hero.id)} className='like-button'></button>
             </div>
