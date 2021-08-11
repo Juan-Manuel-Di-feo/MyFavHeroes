@@ -1,3 +1,11 @@
-.like-list-wrapper{
-    height: 300px;
+
+.like-list-wrapper .hide-button{
+    display: flex;
+    position: absolute;
+    right: 30px;
 }
+
+.hidden{
+    display: none;
+}
+

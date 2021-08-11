@@ -52,3 +52,11 @@ export interface IHeroManager extends React.HTMLAttributes<HTMLElement>{
       likeFunction: Function
       displayList: heroSpec[]
 }
+export interface ILikelistManager extends React.HTMLAttributes<HTMLElement>,IHideManager{
+  likeFunction: Function
+  displayList: heroSpec[]
+}
+export interface IHideManager {
+  hide: Boolean;
+  setHide: Function;
+}

@@ -26,6 +26,8 @@ const App = () => {
     
   }
 
+  const [hide, setHide] = useState<Boolean>(false)
+
   return (
     <div className="App">
       <div className='header'>
@@ -39,8 +41,14 @@ const App = () => {
 
         {service.status === 'loaded' &&
         <>
-          <LikedList isLikeList={true} likeFunction={changeLikedStatus} displayList={heroState.filter(card => card.liked)}  className='liked-hero-list' /> 
-          <HeroList isLikeList={false} likeFunction={changeLikedStatus} displayList={heroState.filter(card => !card.liked)}  className='hero-list' />
+          <LikedList  
+          likeFunction={changeLikedStatus} 
+          displayList={heroState.filter(card => card.liked)}  
+          className='liked-hero-cardlist'
+          hide={hide}
+          setHide={setHide}
+           /> 
+          <HeroList isLikeList={false} likeFunction={changeLikedStatus} displayList={heroState.filter(card => !card.liked)}  className='unliked-hero-cardlist' />
         </>}
       </div>
 

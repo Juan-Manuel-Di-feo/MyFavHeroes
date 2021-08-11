@@ -13,6 +13,25 @@
   box-sizing: border-box;
   border-radius: 5px;
   }
+  .like-list{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-direction: row;
+    align-items:unset;
+    padding: 20px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    margin-right: 17px;
+    margin-top: 10px;
+    position: static;
+    width: auto;
+    height:auto;
+    border: black;
+    border-radius: 5px;
+    border-style: groove;
+    
+}
+
   .header{
     align-items: center;
     position:static;
@@ -20,10 +39,10 @@
   .logo{
     align-self: center;
     position:sticky;
-  width: 65px;
-height: 73px;
-left: 688px;
-top: 57px;
+    width: 65px;
+   height: 73px;
+   left: 688px;
+   top: 57px;
 
 background: url(./assets/logo/logo.svg);
   }

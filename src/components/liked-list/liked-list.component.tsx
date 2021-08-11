@@ -1,14 +1,17 @@
 import './liked-list.styles.css'
 import HeroList from "../hero-list/hero-list.component";
-import { IHeroManager } from '../../interfaces/interfaces';
+import { ILikelistManager } from '../../interfaces/interfaces';
 
 
-const LikedList = (props: IHeroManager) => {
-    
+const LikedList = (props: ILikelistManager) => {
+
+
     return (
         <div className="like-list-wrapper">
-            <button className='hide-button'/>
-            <HeroList isLikeList={props.isLikeList} likeFunction={props.likeFunction} displayList={props.displayList} />
+            <button className='hide-button' onClick={() => props.setHide(!props.hide)}>{props.hide ? '+' : '-'}</button>
+            <div className={`${props.hide ? 'hidden' : ''}`}>
+                <HeroList isLikeList={true} likeFunction={props.likeFunction} displayList={props.displayList} className='liked-hero-list' />
+            </div>
         </div>
     )
 }
