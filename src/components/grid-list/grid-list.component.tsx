@@ -13,18 +13,17 @@ const GridList = (props: IGridList) => {
     const ROW_HEIGHT = 35;
     const ROW_COUNT = props.displayList.length / 4;
     const COLUMN_COUNT = 4
-    let heroArray = new Array;
 
-    props.displayList.map(hero =>
-        heroArray.push(hero))
 
     const Cell = ({ columnIndex, rowIndex, style }) => {
+        if ((props.displayList.length>0)&&(props.displayList.length>Math.round( rowIndex * 1 + columnIndex))){
         console.log (rowIndex * 1 + columnIndex)
         debugger;
         const hero = props.displayList[Math.round( rowIndex * 1 + columnIndex)]
         return (
                 <HeroCard key={hero.id} {...hero} onLiked={props.likeFunction} />
-        )
+        )}
+        return <div></div>
     };
 
 

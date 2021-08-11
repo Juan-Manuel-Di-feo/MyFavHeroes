@@ -46,3 +46,13 @@
 
 background: url(./assets/logo/logo.svg);
   }
+.search-bar{
+   right: 40px;
+   position:static;
+   border-radius: 15px;
+   border-style: none;
+   background-color: rgba(148, 4, 167, 0.815);
+   height: 40px;
+   width: 280px;
+
+}

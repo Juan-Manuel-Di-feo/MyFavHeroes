@@ -31,6 +31,7 @@ const App = () => {
 
   }
   const setText = (event: Event) => {
+    debugger
     setHeroTosearch(event.target.value)
   }
 
@@ -55,11 +56,11 @@ const App = () => {
             hide={hide}
             setHide={setHide}
              /> 
-             <input type="text" onChange={setText} placeholder="Enter hero name here and press enter" className='search-bar'/>
+             <input type="search" onChange={setText} placeholder="Type here to search..." className='search-bar'/>
             <GridList  
             heroState={heroState}
             likeFunction={changeLikedStatus} 
-            displayList={heroState.filter(card => !card.liked).filter(hero=>hero.name.includes(heroToSearch)||hero.biography.fullName.includes(heroToSearch))}  
+            displayList={heroState.filter(card => !card.liked).filter(hero=>hero.name.toLowerCase().includes(heroToSearch.toLowerCase())||hero.biography.fullName.toLowerCase().includes(heroToSearch.toLowerCase()))}  
             className='unliked-hero-cardlist' />
           </>}
         </div>
