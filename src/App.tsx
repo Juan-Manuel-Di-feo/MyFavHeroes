@@ -1,11 +1,9 @@
 /* tslint:disable */
 // @ts-nocheck
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { heroSpec } from './interfaces/interfaces';
 import useHeroService from './components/service-loader/service-loader';
-import { Service, ServiceInit } from "./services/services";
-import HeroList from './components/hero-list/hero-list.component';
 import Loading from './components/content-loader/content-loader.component';
 import LikedList from './components/liked-list/liked-list.component';
 import GridList from './components/grid-list/grid-list.component';
@@ -31,7 +29,6 @@ const App = () => {
 
   }
   const setText = (event: Event) => {
-    debugger
     setHeroTosearch(event.target.value)
   }
 

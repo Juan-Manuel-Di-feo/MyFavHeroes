@@ -1,7 +1,6 @@
-import React, { useState } from "react"
 import { heroSpec } from "../../interfaces/interfaces"
 import './hero-card.styles.css'
-import Loading from "../content-loader/content-loader.component"
+
 
 const HeroCard = (hero: heroSpec) => {
 

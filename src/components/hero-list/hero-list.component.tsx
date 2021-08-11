@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { heroSpec, IHeroManager } from "../../interfaces/interfaces";
+import { IHeroManager } from "../../interfaces/interfaces";
 import HeroCard from "../hero-card/hero-card.component";
-import { IHideManager } from "../../interfaces/interfaces";
+
 
 const HeroList = (props: IHeroManager) => {
     
