@@ -1,6 +1,5 @@
 .hero-card {
     position: static;
-    width: 285px;
     height: 174px;
     left: 16px;
     top: 16px;
@@ -26,6 +25,7 @@ border-radius: 32px;
   }
   .hero-card .content {
     display: flex;
+    overflow: hidden;
     flex-direction: row;
     align-items: flex-start;
     padding: 16px;

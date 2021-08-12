@@ -16,7 +16,7 @@ const GridList = (props: IGridList) => {
     const GUTTER_SIZE = 35;
     const COLUMN_WIDTH = props.appConfig.cardWidth;
     const ROW_HEIGHT = 200;
-    const ROW_COUNT = Math.ceil(props.displayList.length / 4);
+    const ROW_COUNT = Math.ceil(props.displayList.length / props.appConfig.columnCount);
     const COLUMN_COUNT = props.appConfig.columnCount;
 
     
@@ -24,11 +24,11 @@ const GridList = (props: IGridList) => {
 
 
     const Cell = (cellProps: ICellIndex) => {
-        if ((props.displayList.length>0)&&(props.displayList.length>Math.round( cellProps.rowIndex * 4 + cellProps.columnIndex))){
+        if ((props.displayList.length>0)&&(props.displayList.length>cellProps.rowIndex * 4 + cellProps.columnIndex)){
         console.log (cellProps.rowIndex * 4 + cellProps.columnIndex)
-        const hero = props.displayList[Math.round( cellProps.rowIndex * 4 + cellProps.columnIndex)]
+        const hero = props.displayList[cellProps.rowIndex * props.appConfig.columnCount + cellProps.columnIndex]
         return (
-                <HeroCard key={hero.id} {...hero} onLiked={props.likeFunction} />
+                <HeroCard key={hero.id} {...hero} onLiked={props.likeFunction} cardWidth={props.appConfig.cardWidth} />
         )}
         return <div></div>
     };

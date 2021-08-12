@@ -13,7 +13,7 @@ const HeroList = (props: IHeroManager) => {
                 width: listWidth
         }}>
             {props.displayList.map(hero => {
-                return <HeroCard key={hero.id} {...hero} onLiked={props.likeFunction} likeChecker={props.likeCheck}/>
+                return <HeroCard key={hero.id} {...hero} onLiked={props.likeFunction} likeChecker={props.likeCheck} cardWidth={props.appConfig.cardWidth}/>
             })}
         </div>
     )

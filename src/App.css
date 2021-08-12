@@ -32,16 +32,18 @@
 
     background: url(./assets/logo/logo.svg);
   }
+  .sb-wrapper{
+    display: flex;
+  }
 .search-bar{
    display: flex;
 flex-direction:row-reverse;
-align-items: center;
+align-items:flex-end;
 padding: 8px;
 border-style: none;
-position: relative;
+position: static;
 width: 371px;
 height: 40px;
-left: 70%;
 top: 1px;
 right: 0px;
 

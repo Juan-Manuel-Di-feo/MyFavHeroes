@@ -14,9 +14,9 @@ const HeroCard = (hero: heroSpec) => {
         )
     }
     
-
+    
     return (
-        <div className='hero-card'style={{backgroundImage: `url(${hero.images.md})`}}>
+        <div className='hero-card'style={{backgroundImage: `url(${hero.images.md})`, width:hero.cardWidth}}>
 
             <div className='content' >
 

@@ -1,4 +1,6 @@
 export interface heroSpec {
+    cardWidth: number;
+
     likeChecker: Function;
     onLiked: Function;
     
@@ -48,11 +50,13 @@ export interface heroSpec {
 
 
 export interface IHeroManager extends React.HTMLAttributes<HTMLElement>{
+    appConfig: IConfig;
       likeCheck: Function;
       likeFunction: Function;
       displayList: heroSpec[]
 }
 export interface ILikelistManager extends React.HTMLAttributes<HTMLElement>,IHideManager{
+  appConfig: IConfig;
   likeFunction: Function;
   displayList: heroSpec[]
   likeCheck: Function;

@@ -1,32 +1,35 @@
 import { useState, useEffect } from "react";
+import useWindowSize from "./resize-listener";
 
 
 
-const useWidthDetector = () => {
+const useAppConfigurer = () => {
+    const [width, height] = useWindowSize();
+
     const [columnCount,setColumnCount] = useState<number>()
     const [cardWidth,setCardWidth] = useState<number>()
-    debugger;
-  
-    useEffect(()=>{
-        const getdata = async () =>{
-        if(window.innerWidth <= 600){
+    
+    const getdata = async () =>{
+        if(width <= 600){
+           await setColumnCount(1)
+           await setCardWidth((width / 100)* 80 )
+        }
+        else if(width <= 1100){
            await setColumnCount(2)
-           await setCardWidth((window.innerWidth / 100)* 45 )
+           await setCardWidth((width / 100)* 38 )
         }
-        else if(window.innerWidth <=991){
-           await setColumnCount(3)
-           await setCardWidth((window.innerWidth / 100)* 30 )
-        }
+        
         else{
         await setColumnCount(4)
-        await setCardWidth((window.innerWidth / 100)* 22 )
-        }
-    }
+        await setCardWidth((width / 100)* 19 )
+        }}
+
+    useEffect(()=>{
     getdata();
-    },[])
+    },[width, height])
     return {
         columnCount: columnCount,
         cardWidth: cardWidth
     }
 }
-export default useWidthDetector;
+export default useAppConfigurer;
