@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { useEffect, useState } from 'react';
 import './App.css';
-import { heroSpec, IConfig } from './interfaces/interfaces';
+import { heroSpec } from './interfaces/interfaces';
 import useHeroService from './components/service-loader/service-loader';
 import Loading from './components/content-loader/content-loader.component';
 import LikedList from './components/liked-list/liked-list.component';
@@ -16,15 +16,19 @@ const App = () => {
   const [heroToSearch, setHeroTosearch] = useState<string>('');
   const [hide, setHide] = useState<Boolean>(false)
 
-  const [appConfig, setAppConfig] = useState<IConfig | {}>({})
-
   const service = useHeroService();
   
   const widthParam = useAppConfigurer();
   debugger;
   useEffect(() => {
     if (service.status === 'loaded') {
+      if(localStorage.getItem("likedHeroes")){
+        setHerosLiked(JSON.parse(localStorage.getItem("likedHeroes")))
+        setHeroState(JSON.parse(localStorage.getItem("unlikedHeroes")))
+      }
+      else{
       setHeroState(service.payload)
+      }
     }
 
   }, [service.status])
@@ -37,6 +41,8 @@ const App = () => {
       const newHeroState = heroState.filter(hero => hero.id !== cardId);
       herosLiked.push(card)
       const newLikedHeros = [...herosLiked];
+      localStorage.setItem("likedHeroes", JSON.stringify(newLikedHeros));
+      localStorage.setItem("unlikedHeroes", JSON.stringify(newHeroState));
       setHeroState(newHeroState);
       setHerosLiked(newLikedHeros);
     } else {
@@ -44,6 +50,8 @@ const App = () => {
       const newLikedHeros = herosLiked.filter(hero => hero.id !== cardId);
       heroState.splice(likedCard.id - 1, 0, likedCard);
       const newHeroState = [...heroState]
+      localStorage.setItem("likedHeroes", JSON.stringify(newLikedHeros));
+      localStorage.setItem("unlikedHeroes", JSON.stringify(newHeroState));
       setHeroState(newHeroState);
       setHerosLiked(newLikedHeros);
     }
