@@ -1,25 +1,32 @@
-// @ts-nocheck
+//@ts-nocheck
 import { FixedSizeGrid as Grid } from "react-window";
 import HeroCard from "../hero-card/hero-card.component";
 import { forwardRef } from "react";
 import { IGridList } from "../../interfaces/interfaces";
+import { ICellIndex } from "../../interfaces/interfaces";
 import './grid-list.styles.css'
 
 
 const GridList = (props: IGridList) => {
 
+
+
+
+    
     const GUTTER_SIZE = 35;
-    const COLUMN_WIDTH = 285;
-    const ROW_HEIGHT = 35;
-    const ROW_COUNT = props.displayList.length / 4;
-    const COLUMN_COUNT = 4
+    const COLUMN_WIDTH = props.appConfig.cardWidth;
+    const ROW_HEIGHT = 200;
+    const ROW_COUNT = Math.ceil(props.displayList.length / 4);
+    const COLUMN_COUNT = props.appConfig.columnCount;
+
+    
 
 
-    const Cell = ({ columnIndex, rowIndex, style }) => {
-        if ((props.displayList.length>0)&&(props.displayList.length>Math.round( rowIndex * 1 + columnIndex))){
-        console.log (rowIndex * 1 + columnIndex)
-        debugger;
-        const hero = props.displayList[Math.round( rowIndex * 1 + columnIndex)]
+
+    const Cell = (cellProps: ICellIndex) => {
+        if ((props.displayList.length>0)&&(props.displayList.length>Math.round( cellProps.rowIndex * 4 + cellProps.columnIndex))){
+        console.log (cellProps.rowIndex * 4 + cellProps.columnIndex)
+        const hero = props.displayList[Math.round( cellProps.rowIndex * 4 + cellProps.columnIndex)]
         return (
                 <HeroCard key={hero.id} {...hero} onLiked={props.likeFunction} />
         )}
@@ -27,22 +34,23 @@ const GridList = (props: IGridList) => {
     };
 
 
-    const innerElementType = forwardRef(({ style, ...rest }, ref) => (
-        <div ref={ref}
+    const innerElementType = forwardRef(({...rest }) => (
+        <div className='content-wrapper'
             style={{
-                ...style,
+                width: window.innerWidth,
                 paddingLeft: GUTTER_SIZE,
-                paddingTop: GUTTER_SIZE
+                paddingTop: GUTTER_SIZE,
             }}
             {...rest}
         />
     ));
+    
     console.log(props.displayList)
     return <Grid
         className="Grid"
         columnCount={COLUMN_COUNT}
         columnWidth={COLUMN_WIDTH + GUTTER_SIZE}
-        height={window.innerHeight - 20}
+        height={500}
         innerElementType={innerElementType}
         rowCount={ROW_COUNT}
         rowHeight={ROW_HEIGHT + GUTTER_SIZE}

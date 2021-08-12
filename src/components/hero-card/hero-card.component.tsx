@@ -1,3 +1,5 @@
+//@ts-nocheck
+import { isPropertySignature } from "typescript";
 import { heroSpec } from "../../interfaces/interfaces"
 import './hero-card.styles.css'
 
@@ -11,11 +13,12 @@ const HeroCard = (hero: heroSpec) => {
             Math.round(power * 100) / 100.
         )
     }
-    console.log('error',hero.biography.fullName)
-    return (
-        <div className='hero-card'>
+    
 
-            <div className='content'>
+    return (
+        <div className='hero-card'style={{backgroundImage: `url(${hero.images.md})`}}>
+
+            <div className='content' >
 
                 <div className='frame-1'>
                     <div className="frame-10">
@@ -29,7 +32,9 @@ const HeroCard = (hero: heroSpec) => {
                 <div className='group-296'>
                     <img className='image' alt="hero" src={hero.images.sm} />
                 </div>
-                <button onClick={() => hero.onLiked(hero.id)} className='like-button'></button>
+                <button onClick={() => hero.onLiked(hero.id)} className='like-button'>
+                    <div className={hero.likeChecker? 'liked':'unliked'}/>
+                </button>
             </div>
         </div>
     )

@@ -1,3 +1,8 @@
+.list-wrapper{
+
+}
+
+
 .hero-list {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -5,54 +10,76 @@
   align-items:unset;
   padding: 16px;
   
-  position: static;
+  position: relative;
   width: auto;
   height:auto;
   
-  border: 1px dashed #7B61FF;
   box-sizing: border-box;
   border-radius: 5px;
   }
-  .like-list{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    flex-direction: row;
-    align-items:unset;
-    padding: 20px;
-    margin-left: 10px;
-    margin-bottom: 30px;
-    margin-right: 17px;
-    margin-top: 10px;
-    position: static;
-    width: auto;
-    height:auto;
-    border: black;
-    border-radius: 5px;
-    border-style: groove;
-    
-}
+
 
   .header{
     align-items: center;
     position:static;
+    
   }
   .logo{
     align-self: center;
     position:sticky;
     width: 65px;
    height: 73px;
-   left: 688px;
-   top: 57px;
 
-background: url(./assets/logo/logo.svg);
+    background: url(./assets/logo/logo.svg);
   }
 .search-bar{
-   right: 40px;
-   position:static;
-   border-radius: 15px;
-   border-style: none;
-   background-color: rgba(148, 4, 167, 0.815);
-   height: 40px;
-   width: 280px;
+   display: flex;
+flex-direction:row-reverse;
+align-items: center;
+padding: 8px;
+border-style: none;
+position: relative;
+width: 371px;
+height: 40px;
+left: 70%;
+top: 1px;
+right: 0px;
+
+background: rgba(255, 255, 255, 0.1);
+border-radius: 32px;
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 24px;
+
+}
+
+/*Custom breakpoints to increase app responsiveness*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 
 }

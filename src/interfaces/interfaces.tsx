@@ -1,7 +1,7 @@
 export interface heroSpec {
-    onLiked: Function,
-    liked:boolean;
-
+    likeChecker: Function;
+    onLiked: Function;
+    
     id: number;
     name: string;
     slug: string;
@@ -48,13 +48,14 @@ export interface heroSpec {
 
 
 export interface IHeroManager extends React.HTMLAttributes<HTMLElement>{
-      isLikeList: boolean
-      likeFunction: Function
+      likeCheck: Function;
+      likeFunction: Function;
       displayList: heroSpec[]
 }
 export interface ILikelistManager extends React.HTMLAttributes<HTMLElement>,IHideManager{
-  likeFunction: Function
+  likeFunction: Function;
   displayList: heroSpec[]
+  likeCheck: Function;
 }
 export interface IHideManager {
   hide: Boolean;
@@ -65,4 +66,16 @@ export interface IGridList extends React.HTMLAttributes<HTMLElement>{
   heroState: heroSpec[];
   likeFunction: Function;
   displayList: heroSpec[]
+  likeCheck: Function;
+  appConfig: IConfig;
+}
+
+export interface ICellIndex {
+    columnIndex: number;
+    rowIndex: number;
+}
+
+export interface IConfig{
+    columnCount: number;
+    cardWidth: number;
 }

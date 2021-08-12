@@ -7,13 +7,18 @@ const LikedList = (props: ILikelistManager) => {
 
 
     return (
-        <div className="like-list-wrapper">
+        <>
             <button className='hide-button' onClick={() => props.setHide(!props.hide)}>{props.hide ? '+' : '-'}</button>
-            <div className={`${props.hide ? 'hidden' : ''}`}>
-                <HeroList isLikeList={true} likeFunction={props.likeFunction} displayList={props.displayList} className='liked-hero-list' />
+            <div className={`${props.hide && 'hidden-list'} liked-hero-list`}>
+
+                <div className={`${props.hide && 'hidden'}`}>
+                    <HeroList likeCheck={props.likeCheck} likeFunction={props.likeFunction} displayList={props.displayList} />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
 export default LikedList;
+
+

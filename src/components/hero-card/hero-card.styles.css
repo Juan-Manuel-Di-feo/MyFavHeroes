@@ -6,16 +6,20 @@
     top: 16px;
     display: inline-block;
     margin: 16px 16px;
+    border-radius: 8px;
   }
   .hero-card .like-button {
 
-position:absolute;
-width: 40px;
-height: 40px;
-left: 31.57%;
-right: 50.00%;
-top: 75.37%;
-bottom: 8.00%;
+    position:absolute;
+    width: 40px;
+    height: 40px;
+    left: 31.57%;
+    right: 50.00%;
+    top: 75.37%;
+    bottom: 8.00%;
+    border-style: none;
+    order: 1;
+
 
 background: #6A4DBC;
 border-radius: 32px;
@@ -104,7 +108,6 @@ border-radius: 32px;
     color: #FFFFFF;
     /* Inside Auto Layout */
     flex: none;
-    order: 1;
     flex-grow: 1;
     margin: 0px 4px;
   }
@@ -165,10 +168,34 @@ border-radius: 32px;
     margin: 0px 16px;
   }
   .hero-card .content .group-296 .image {
-    position:absolute;
+    position: absolute;
     width: 105px;
     height: 140px;
     left: 16px;
     top: 16px;
     border-radius: 12px;
+  }
+
+  .liked{
+    background: url('../../assets/hearth/filled-hearth/medium-filled-heart.svg');
+    width: 16px;
+    height: 16px;
+    position: absolute;
+left: 30%;
+right: 75%;
+top: 32.7%;
+bottom: 60%;
+
+    
+  }
+  .unliked{
+    background: url('../../assets/hearth/empty-hearth/medium-heart.svg');
+    width: 17px;
+    height: 16px;
+    position: absolute;
+left: 28%;
+right: 72%;
+top: 35%;
+bottom: 50%;
+
   }

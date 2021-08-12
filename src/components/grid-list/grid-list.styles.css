@@ -1,12 +1,8 @@
-.hero-grid{
-position: static;
-width: 285px;
-height: 174px;
-left: 900px;
-top: 0px;
+.Grid{ 
 
-flex: none;
-order: 3;
-flex-grow: 0;
-margin: 0px 15px;
 }
+.content-wrapper{
+width:min-content;
+
+}
+

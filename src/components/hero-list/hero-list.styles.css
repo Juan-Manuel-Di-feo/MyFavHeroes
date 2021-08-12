@@ -1,3 +1,6 @@
-.hero-list-2{
-    height: 300px;
+.liked-cards{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
