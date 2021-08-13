@@ -14,10 +14,10 @@ const LikedList = (props: ILikelistManager) => {
             return 1.1
         }
         if (props.appConfig.columnCount === 2) {
-            return 2.2
+            return 2.3
         }
         if (props.appConfig.columnCount === 3) {
-            return 4.5
+            return 3.4
         }
         return 4.5
     }
