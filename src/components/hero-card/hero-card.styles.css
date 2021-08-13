@@ -6,6 +6,7 @@
     display: inline-block;
     margin: 16px 16px;
     border-radius: 8px;
+    overflow: hidden;
   }
   .hero-card .like-button {
 
@@ -36,7 +37,7 @@ border-radius: 32px;
     bottom: 0%;
     background: rgba(54, 44, 106, 0.65);
     backdrop-filter: blur(27px);
-    border-radius: 8px;
+    border-radius: 7px;
   }
   .hero-card .content .frame-1 {
     /* Frame 1 */

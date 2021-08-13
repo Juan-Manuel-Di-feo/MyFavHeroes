@@ -5,18 +5,17 @@
     align-items: center;
     padding: 8px;
     
-    position: static;
+    position: absolute;
     width: 40px;
     height: 40px;
-    left: 90%;
-    top: 1px;
+    top: 15px;
+    right: 0.8%;
     
     background: rgba(255, 255, 255, 0.1);
     border-radius: 32px;
     border-style: none;
     
     flex: none;
-    order: 1;
     flex-grow: 0;
 }
 
@@ -26,8 +25,8 @@
 
 .liked-hero-list{
     display:flex;
-   flex-direction: row;
-   align-items:center;
+   flex-direction: column;
+   align-items:flex-start;
 
    margin-left: 5%;
    margin-bottom: 30px;
@@ -44,4 +43,99 @@
 
 .hidden-list.liked-hero-list{
     background: rgba(106, 77, 188, 0.28);
+    height: 74px;
+
+}
+
+.like-lst{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.arrow{
+    background: url(../../assets/arrow/arrow-up.svg);
+    position: absolute;
+    width: 24px;
+    height: 24px;
+
+
+}
+
+.hid.arrow{
+
+    transform: rotate(-180deg);
+}
+
+.liked-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    
+    position: static;
+    width: 121px;
+    height: 42px;
+    left: 0px;
+    top: 0px;
+    
+}
+
+.liked-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position:static;
+    border-style: none;
+    margin-right: 5px;
+    background: #6A4DBC;
+    border-radius: 32px;
+}
+.liked-logo-hearth{
+    background: url('../../assets/hearth/empty-hearth/medium-heart.svg');
+    width: 17px;
+    height: 16px;
+    position: relative;
+
+    top:1px;
+
+}
+.text{
+    position: static;
+    font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 42px;
+letter-spacing: 0.725381px;
+
+color: #FFFFFF;
+    
+}
+
+
+.disabled.hide-button{
+    background-color: #a5a5a5b9;
+}
+
+.empty-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 167px;
+    width: 100%;
+}
+
+.big-empty-hearth{
+    background: url(../../assets/hearth/big-hearth/big-heart.svg);
+    width: 36px;
+    height: 34px;
+}
+
+.empty-text{
+    color: #FFFFFF;
+
 }

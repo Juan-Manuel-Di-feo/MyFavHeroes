@@ -14,7 +14,7 @@ const GridList = (props: IGridList) => {
 
     
     const GUTTER_SIZE = 35;
-    const COLUMN_WIDTH = props.appConfig.cardWidth;
+    const COLUMN_WIDTH = props.appConfig.cardWidth* 1.05;
     const ROW_HEIGHT = 200;
     const ROW_COUNT = Math.ceil(props.displayList.length / props.appConfig.columnCount);
     const COLUMN_COUNT = props.appConfig.columnCount;

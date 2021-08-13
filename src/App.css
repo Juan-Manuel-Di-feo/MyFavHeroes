@@ -1,7 +1,3 @@
-.list-wrapper{
-
-}
-
 
 .hero-list {
   display:grid;
@@ -19,21 +15,34 @@
   }
 
 
-  .header{
-    align-items: center;
-    position:static;
-    
-  }
+
   .logo{
     align-self: center;
-    position:sticky;
     width: 65px;
-   height: 73px;
+    height: 73px;
+    margin: 40px 46.5%;
 
     background: url(./assets/logo/logo.svg);
   }
   .sb-wrapper{
+    position: relative;
     display: flex;
+    flex-direction: row;
+    width: 371px;
+    height: 40px;
+    margin-bottom: 10px;
+    left:67%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+  }
+  .search-logo{
+    position: absolute;
+    background: url(./assets/search/search.svg);
+    width: 20px; 
+    height:20px;
+    order: 0;
+    top: 20%;
+    left: 1.5%;
   }
 .search-bar{
    display: flex;
@@ -41,16 +50,18 @@ flex-direction:row-reverse;
 align-items:flex-end;
 padding: 8px;
 border-style: none;
-position: static;
-width: 371px;
-height: 40px;
-top: 1px;
-right: 0px;
+position: absolute;
+width: 300px;
+top: 4px;
+left: 3%;
+font: Poppins;
+font-size: 15px;
+color:rgba(255, 255, 255, 0.3);
 
-background: rgba(255, 255, 255, 0.1);
-border-radius: 32px;
+background-color: rgba(255, 255, 255, 0);
 
-/* Inside Auto Layout */
+
+
 
 flex: none;
 order: 1;

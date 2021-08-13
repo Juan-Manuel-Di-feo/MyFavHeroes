@@ -1,7 +1,7 @@
 import { useState, useLayoutEffect } from "react";
 
 const useWindowSize =()=> {
-    debugger
+
     const [size, setSize] = useState([0, 0]);
     useLayoutEffect(() => {
       function updateSize() {

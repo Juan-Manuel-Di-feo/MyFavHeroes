@@ -19,7 +19,7 @@ const App = () => {
   const service = useHeroService();
   
   const widthParam = useAppConfigurer();
-  debugger;
+
   useEffect(() => {
     if (service.status === 'loaded') {
       if(localStorage.getItem("likedHeroes")){
@@ -48,6 +48,7 @@ const App = () => {
     } else {
       const likedCard = herosLiked.find(hero => hero.id === cardId);
       const newLikedHeros = herosLiked.filter(hero => hero.id !== cardId);
+      likedCard &&
       heroState.splice(likedCard.id - 1, 0, likedCard);
       const newHeroState = [...heroState]
       localStorage.setItem("likedHeroes", JSON.stringify(newLikedHeros));
@@ -56,11 +57,11 @@ const App = () => {
       setHerosLiked(newLikedHeros);
     }
   }
-  const setText = (event: Event) => {
-    setHeroTosearch(event.target.value)
+  const setText = (e: Event | any) => {
+    setHeroTosearch(e.target.value)
   }
 
-  const isLiked = () => {
+  const isLiked = (cardId: number) => {
     if (herosLiked.find(hero => hero.id === cardId)) {
       return true
     }
@@ -69,10 +70,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className='header'>
-        <div className="logo" />
-      </div>
 
+        <div className="logo" />
 
       <div className='list-wrapper'>
         {service.status === 'loading' &&
@@ -89,9 +88,12 @@ const App = () => {
               hide={hide}
               setHide={setHide}
             />
+
             <div className='sb-wrapper'>
-              <input type="search" onChange={setText} placeholder="Type here to search..." className='search-bar' />
+              <div className='search-logo'/>
+              <input type="search" onChange={setText} placeholder="Search" className='search-bar' />
             </div>
+
             <GridList
               appConfig={widthParam}
               likeCheck={isLiked}
