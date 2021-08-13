@@ -8,6 +8,8 @@ const useDimensionSet = () => {
     const [cardWidth, setCardWidth] = useState<number>()
 
     const [searchBarSpace, setsearchBarSpace] = useState<number>()
+    const [titleFit, setTitleFit] = useState<boolean>() 
+    const [titlePosition, setTitlePosition] = useState<number>()
 
     const getGridSizes = () => {
         if (width <= 600) {
@@ -35,18 +37,28 @@ const useDimensionSet = () => {
     const getSearchbarSizes = () =>{
 
         if (width <= 400) {
-            setsearchBarSpace(0)
+            setTitleFit(true)
+            setTitlePosition(((width/100)*50)-110)
+            setsearchBarSpace(((width/100)*50)-180)
         }
         else if (width <= 619) {
-            setsearchBarSpace((width/100)*15)
+            setTitleFit(true)
+            setTitlePosition(((width/100)*50)-110)
+            setsearchBarSpace(((width/100)*50)-180)
         }
         else if (width <= 950) {
-            setsearchBarSpace((width/100)*30)
+            setTitleFit(true)
+            setTitlePosition(((width/100)*50)-110)
+            setsearchBarSpace(((width/100)*50)-180)
         }
         else if (width <= 1150) {
+            setTitleFit(false)
+            setTitlePosition(40)
             setsearchBarSpace((width/100)*50)
         }
         else {
+            setTitleFit(false)
+            setTitlePosition(40)
             setsearchBarSpace((width/100)*67)
         }
     }
@@ -60,7 +72,9 @@ const useDimensionSet = () => {
     return {
         columnCount: columnCount,
         cardWidth: cardWidth,
-        searchBarSpace: searchBarSpace
+        searchBarSpace: searchBarSpace,
+        titlePosition:titlePosition,
+        titleFit:titleFit
     }
 }
 export default useDimensionSet;

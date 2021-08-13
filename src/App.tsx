@@ -91,12 +91,17 @@ const App = () => {
               setHide={setHide}
               lastLikedId={lastLiked}
             />
+            <div className="title-sb">
+              <div className="title-wrapper" style={{height:widthParam.titleFit? 70:22, marginLeft:widthParam.titlePosition}}>
+                <h1 className="hero-title">All superheroes</h1>
+              </div>
+              <div className='sb-wrapper' style={{ marginLeft: widthParam.searchBarSpace }}>
 
-            <div className='sb-wrapper' style={{marginLeft: widthParam.searchBarSpace}}>
-              <div className='search-logo' />
-              <input type="search" onChange={setText} placeholder="Search" className='search-bar' style={{}} />
+                <div className='search-logo' />
+                <input type="search" onChange={setText} placeholder="Search" className='search-bar' />
+
+              </div>
             </div>
-
             <GridList
               appConfig={widthParam}
               likeCheck={isLiked}

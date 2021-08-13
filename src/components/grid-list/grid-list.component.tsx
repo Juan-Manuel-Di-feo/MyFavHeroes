@@ -19,7 +19,6 @@ const GridList = (props: IGridList) => {
 
     const Cell = (cellProps: ICellIndex) => {
         if ((props.displayList.length > 0) && (props.displayList.length > cellProps.rowIndex * props.appConfig.columnCount + cellProps.columnIndex)) {
-            debugger;
             const hero = props.displayList[cellProps.rowIndex * props.appConfig.columnCount + cellProps.columnIndex]
             return (
                 <HeroCard key={hero.id} {...hero} onLiked={props.likeFunction} cardWidth={props.appConfig.cardWidth} />

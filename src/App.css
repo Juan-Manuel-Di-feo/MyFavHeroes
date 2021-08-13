@@ -24,6 +24,43 @@
 
     background: url(./assets/logo/logo.svg);
   }
+  .title-sb{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+  }
+  .title-wrapper{
+    position: relative;
+    align-content: center;
+    width: 50%;
+    margin-left: 40px;
+  }
+  .hero-title{
+    
+position: absolute;
+
+left: 0px;
+top: 0px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 42px;
+
+
+letter-spacing: 0.725381px;
+
+color: #FFFFFF;
+
+
+flex: none;
+order: 0;
+
+  }
   .sb-wrapper{
     position:relative;
     display: flex;
