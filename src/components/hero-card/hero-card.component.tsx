@@ -25,6 +25,7 @@ const HeroCard = (hero: heroSpec) => {
                         <h1 className='hero-name'>{hero.name}</h1>
                         <span className='real-full-name'>Real name: {hero.biography.fullName}</span>
                         <div className="frame-12">
+                            <div className="fist" />
                             <span className='power-score'>{powerCalculator(hero)}</span>
                         </div>
                     </div>
@@ -39,9 +40,9 @@ const HeroCard = (hero: heroSpec) => {
 
             </div>
             {hero.id === hero.lastLikedId &&
-                    <div className="recently-liked-sign" style={{ width: (hero.cardWidth / 100) * 40 }}>
-                        <span className='recently-liked-text'>Liked recently</span>
-                    </div>}
+                <div className="recently-liked-sign" style={{ width: (hero.cardWidth / 100) * 40 }}>
+                    <span className='recently-liked-text'>Liked recently</span>
+                </div>}
         </div>
     )
 }
