@@ -6,7 +6,7 @@ import useHeroService from './components/service-loader/service-loader';
 import Loading from './components/content-loader/content-loader.component';
 import LikedList from './components/liked-list/liked-list.component';
 import GridList from './components/grid-list/grid-list.component';
-import useAppConfigurer from './components/responsive-manager/responsive-manager';
+import useDimensionSet from './components/responsive-manager/responsive-manager';
 
 const App = () => {
 
@@ -17,17 +17,17 @@ const App = () => {
   const [hide, setHide] = useState<Boolean>(false)
 
   const service = useHeroService();
-  
-  const widthParam = useAppConfigurer();
+
+  const widthParam = useDimensionSet();
 
   useEffect(() => {
     if (service.status === 'loaded') {
-      if(localStorage.getItem("likedHeroes")){
+      if (localStorage.getItem("likedHeroes")) {
         setHerosLiked(JSON.parse(localStorage.getItem("likedHeroes")))
         setHeroState(JSON.parse(localStorage.getItem("unlikedHeroes")))
       }
-      else{
-      setHeroState(service.payload)
+      else {
+        setHeroState(service.payload)
       }
     }
 
@@ -49,7 +49,7 @@ const App = () => {
       const likedCard = herosLiked.find(hero => hero.id === cardId);
       const newLikedHeros = herosLiked.filter(hero => hero.id !== cardId);
       likedCard &&
-      heroState.splice(likedCard.id - 1, 0, likedCard);
+        heroState.splice(likedCard.id - 1, 0, likedCard);
       const newHeroState = [...heroState]
       localStorage.setItem("likedHeroes", JSON.stringify(newLikedHeros));
       localStorage.setItem("unlikedHeroes", JSON.stringify(newHeroState));
@@ -71,7 +71,7 @@ const App = () => {
   return (
     <div className="App">
 
-        <div className="logo" />
+      <div className="logo" />
 
       <div className='list-wrapper'>
         {service.status === 'loading' &&
@@ -89,9 +89,9 @@ const App = () => {
               setHide={setHide}
             />
 
-            <div className='sb-wrapper'>
-              <div className='search-logo'/>
-              <input type="search" onChange={setText} placeholder="Search" className='search-bar' />
+            <div className='sb-wrapper' style={{marginLeft: widthParam.searchBarSpace}}>
+              <div className='search-logo' />
+              <input type="search" onChange={setText} placeholder="Search" className='search-bar' style={{}} />
             </div>
 
             <GridList

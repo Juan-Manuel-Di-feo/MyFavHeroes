@@ -25,13 +25,12 @@
     background: url(./assets/logo/logo.svg);
   }
   .sb-wrapper{
-    position: relative;
+    position:relative;
     display: flex;
     flex-direction: row;
-    width: 371px;
+    width: 360px;
     height: 40px;
     margin-bottom: 10px;
-    left:67%;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 32px;
   }
@@ -51,7 +50,7 @@ align-items:flex-end;
 padding: 8px;
 border-style: none;
 position: absolute;
-width: 300px;
+width: 280px;
 top: 4px;
 left: 3%;
 font: Poppins;
