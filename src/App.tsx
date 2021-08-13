@@ -12,6 +12,7 @@ const App = () => {
 
   const [heroState, setHeroState] = useState<heroSpec[]>([]);
   const [herosLiked, setHerosLiked] = useState<heroSpec[]>([]);
+  const [lastLiked, setLastLiked] = useState<heroSpec>();
 
   const [heroToSearch, setHeroTosearch] = useState<string>('');
   const [hide, setHide] = useState<Boolean>(false)
@@ -43,6 +44,7 @@ const App = () => {
       const newLikedHeros = [...herosLiked];
       localStorage.setItem("likedHeroes", JSON.stringify(newLikedHeros));
       localStorage.setItem("unlikedHeroes", JSON.stringify(newHeroState));
+      setLastLiked(card.id)
       setHeroState(newHeroState);
       setHerosLiked(newLikedHeros);
     } else {
@@ -87,6 +89,7 @@ const App = () => {
               className='liked-hero-cardlist'
               hide={hide}
               setHide={setHide}
+              lastLikedId={lastLiked}
             />
 
             <div className='sb-wrapper' style={{marginLeft: widthParam.searchBarSpace}}>

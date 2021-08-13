@@ -1,12 +1,12 @@
 .hero-card {
-    position: static;
+    position: relative;
     height: 174px;
     left: 16px;
     top: 16px;
     display: inline-block;
     margin: 16px 16px;
     border-radius: 8px;
-    overflow: hidden;
+
   }
   .hero-card .like-button {
 
@@ -24,6 +24,26 @@
 background: #6A4DBC;
 border-radius: 32px;
   }
+.recently-liked-sign{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+padding: 2px 4px;
+
+position: absolute;
+
+overflow:visible;
+right: -5px;
+top:-5px;
+background: #7B61FF;
+border-radius: 6px;
+}
+.recently-liked-text{
+  font: Poppins;
+  font-weight:900;
+}
+
   .hero-card .content {
     display: flex;
     overflow: hidden;

@@ -41,7 +41,13 @@ const LikedList = (props: ILikelistManager) => {
                 </div>
                 :    
                 <div className={`${props.hide && 'hidden'}`}>
-                    <HeroList likeCheck={props.likeCheck} likeFunction={props.likeFunction} displayList={props.displayList} appConfig={props.appConfig} />
+                    <HeroList 
+                    likeCheck={props.likeCheck} 
+                    likeFunction={props.likeFunction} 
+                    displayList={props.displayList} 
+                    appConfig={props.appConfig} 
+                    lastLikedId={props.lastLikedId}
+                    />
                 </div>}
 
                 <button className={` ${props.displayList.length?'':'disabled'} hide-button`} onClick={() => props.setHide(!props.hide)} disabled={props.displayList.length? false:true}>

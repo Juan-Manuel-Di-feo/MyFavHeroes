@@ -3,6 +3,7 @@ export interface heroSpec {
 
     likeChecker: Function;
     onLiked: Function;
+    lastLikedId: number;
     
     id: number;
     name: string;
@@ -54,12 +55,14 @@ export interface IHeroManager extends React.HTMLAttributes<HTMLElement>{
       likeCheck: Function;
       likeFunction: Function;
       displayList: heroSpec[]
+      lastLikedId: number;
 }
 export interface ILikelistManager extends React.HTMLAttributes<HTMLElement>,IHideManager{
   appConfig: IConfig;
   likeFunction: Function;
   displayList: heroSpec[]
   likeCheck: Function;
+  lastLikedId: number;
 }
 export interface IHideManager {
   hide: Boolean;

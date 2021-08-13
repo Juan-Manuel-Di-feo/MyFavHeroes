@@ -14,6 +14,10 @@ const useDimensionSet = () => {
             setColumnCount(1)
             setCardWidth((width / 100) * 77)
         }
+        else if (width <= 700) {
+            setColumnCount(1)
+            setCardWidth((width / 100) * 60)
+        }
         else if (width <= 991) {
             setColumnCount(2)
             setCardWidth((width / 100) * 38)
@@ -29,7 +33,7 @@ const useDimensionSet = () => {
     }
 
     const getSearchbarSizes = () =>{
-        debugger;
+
         if (width <= 400) {
             setsearchBarSpace(0)
         }
@@ -52,7 +56,6 @@ const useDimensionSet = () => {
         getGridSizes();
         getSearchbarSizes();
 
-        debugger;
     }, [width, height])
     return {
         columnCount: columnCount,
